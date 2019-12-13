@@ -7,6 +7,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //console.log(path.join(__dirname,"../public"))
 const publicDirectoryPath = path.join(__dirname, "../public")
@@ -103,6 +104,11 @@ app.get("*", (req, res) => {
     res.send("My 404 page")
 })
 
-app.listen(3000, () => {
+// for heoku we need to chnage the port number
+// app.listen(3000, () => {
+//     console.log("Server is running at port 3000")
+// })
+
+app.listen(port, () => {
     console.log("Server is running at port 3000")
 })

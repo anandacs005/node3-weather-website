@@ -30,7 +30,11 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const location = searchElement.value
-    let url = "http://localhost:3000/weather?address=" + location
+    // let url = "http://localhost:3000/weather?address=" + location
+
+    //for heroku  adapt
+    let url = "/weather?address=" + location
+
     fetch(url).then((response) => {
         response.json().then((data) => {
             if (data.error)
