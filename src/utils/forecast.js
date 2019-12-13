@@ -23,7 +23,10 @@ const forecast = (latitude, longitude, callback) => {
             // const data = JSON.parse(response.body)
             // console.log(data.currently)
             //console.log(response.body.currently)
-            callback(body.daily.data[0].summary + " It is currently " + body.currently.temperature + " degrees out. Thers is " + body.currently.precipProbability + "% chance of rain")
+            //console.log(body.daily.data[0])
+            callback(body.daily.data[0].summary + " It is currently " + body.currently.temperature + " degrees out. The high today is " + body.daily.data[0].temperatureHigh  + " and with a low of "+ body.daily.data[0].temperatureLow + " Thers is " + body.currently.precipProbability + "% chance of rain")
+
+            
         }
     })
 }
